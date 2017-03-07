@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+}
+main{
+    display: flex;
+    height: 250px;
+    border: solid 1px #999;
+
+}
+input{
+    text-align: center;
+    padding: 5px;
+    margin: 5px
+}

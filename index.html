@@ -9,19 +9,22 @@
     <body>
         <main>
             <form action="/runofshame">
-                <input type="text" id="f_nameRunner" name="f_name" placeholder="name">
-                <input type="text" id="l_nameRunner" name="l_name" placeholder="last name">
+                <input type="text" id="f_nameRunner" name="f_name" placeholder="name"><br>
+                <input type="text" id="l_nameRunner" name="l_name" placeholder="last name"><br>
                 <select name="gender">
                     <option>male</option>
                     <option>female</option>
                 </select>
-                <span>
+                <span><br>
                 <input type="text" id="m_timeRunner" name="m_time" placeholder="insert minute">
-                :
-                <input type="text" id="s_timeRunner" name="s_time" placeholder="insert second">
-                </span>
+                :<input type="text" id="s_timeRunner" name="s_time" placeholder="insert second">
+                </span><br>
                 <input type="submit" name="submit">
             </form>
+            <footer>
+                <input type="button" id="call_serverResponse" value="get data">
+                <table id="server_response"></table>
+            </footer>
         </main>
         <script src="js/client.js"></script>
     </body>
