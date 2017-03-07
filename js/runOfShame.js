@@ -57,8 +57,8 @@ function getMongoData(response){
                     naam: element.naam,
                     voornaam: element.voornaam,
                     gender: element.gender,
-                    minuten: element.tijd
-                    
+                    minuten: element.tijd.minuten,
+                    seconden: element.tijd.seconden
                 }
                 finisherArray.push(jsonObj)
             });
