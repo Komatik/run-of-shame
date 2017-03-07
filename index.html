@@ -9,8 +9,17 @@
     <body>
         <main>
             <form action="/runofshame">
-                <input type="text" id="nameRunner" name="name" placeholder="name">
-                <input type="text" id="timeRunner" name="time" placeholder="insert time">
+                <input type="text" id="f_nameRunner" name="f_name" placeholder="name">
+                <input type="text" id="l_nameRunner" name="l_name" placeholder="last name">
+                <select name="gender">
+                    <option>male</option>
+                    <option>female</option>
+                </select>
+                <span>
+                <input type="text" id="m_timeRunner" name="m_time" placeholder="insert minute">
+                :
+                <input type="text" id="s_timeRunner" name="s_time" placeholder="insert second">
+                </span>
                 <input type="submit" name="submit">
             </form>
         </main>
