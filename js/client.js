@@ -4,7 +4,7 @@ document.getElementById("call_serverResponse").onclick = getData
 
 function getData(){
     $.get("/data", function(finishers){
-        $.each(finshers,function(index, finisher){
+        $.each(finishers,function(index, finisher){
             var table = $("#server_response")
             var rij = table.insertRow()
             var celNaam = rij.insertCell()
