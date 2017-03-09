@@ -5,6 +5,13 @@ var app = express();
 var path = require("path")
 var url = require("url")
 var finisherArray = []
+var mongoClient = require('mongodb').MongoClient;
+var mongoUrl = 'mongodb://localhost:27017/test';
+
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 app.get("/runofshame", (request, response) => {
     if(request.socket.remoteAddress == "::ffff:192.168.23.109"){
@@ -38,14 +45,16 @@ app.get("/data", (request, response) => {
     }
 })
 
+app.post('/addRunner', function (req, res) {
+    postMongoData(req.body)
+    res.end('{"message" : "Added Successfully", "status" : 200}');
+});
+
 app.listen(8085)
 
 function getMongoData(response){
-    var mongoClient = require('mongodb').MongoClient;
-
-    var url = 'mongodb://localhost:27017/test';
-
-    mongoClient.connect(url, function (err, db) {
+    finisherArray.length = 0
+    mongoClient.connect(mongoUrl, function (err, db) {
         console.log("Connected successfully to server");
 
         var collection = db.collection('records');
@@ -65,5 +74,19 @@ function getMongoData(response){
             response.send(finisherArray)
             db.close();
         });
+    });
+}
+
+function postMongoData(finisherObj){
+    mongoClient.connect(mongoUrl, function(err, db) {
+        var collection = db.collection('records');
+        collection.insertOne({
+            naam:finisherObj.l_name,
+            voornaam:finisherObj.f_name,
+            gender:finisherObj.gender,
+            tijd:{minuten:finisherObj.m_time, seconden:finisherObj.s_time}},function(err, result){
+            console.log(result.insertedCount)
+        })
+        db.close()
     });
 }
