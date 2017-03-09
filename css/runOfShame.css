@@ -7,15 +7,19 @@
 body{
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
-main, footer{
+main{
     display: flex;
     flex-direction: column;
-    margin: auto;
-}
-main{ 
-    margin: auto;
+    margin: auto auto 0;
     border: solid 1px #999;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto auto;
 }
 
 input, select{
