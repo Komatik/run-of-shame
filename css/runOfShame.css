@@ -45,3 +45,12 @@ input, select{
     color: #111;
     border-color:#555;
 }
+table thead tr td{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+table tr td{
+    border: solid 1px #eee;
+    padding: 5px;
+    margin: 2px;
+}
