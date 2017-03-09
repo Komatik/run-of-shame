@@ -1,19 +1,47 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
 }
 body{
     display: flex;
+    flex-direction: column;
 }
-main{
+main, footer{
     display: flex;
-    height: 250px;
-    border: solid 1px #999;
-
+    flex-direction: column;
+    margin: auto;
 }
-input{
+main{ 
+    margin: auto;
+    border: solid 1px #999;
+}
+
+input, select{
     text-align: center;
     padding: 5px;
     margin: 5px
+}
+
+#sub{
+    width: 100%;
+    margin: auto;
+    border: none;
+    color: #fff;
+    background:#999;
+}
+#sub:hover{
+    background:#555;
+}
+
+#call_serverResponse{
+    margin: 5px;
+    background: #fff;
+    color: #555;
+    border: solid 2px #999;
+}
+#call_serverResponse:hover{
+    color: #111;
+    border-color:#555;
 }
